@@ -1,10 +1,10 @@
 import React from 'react';
-import UsersTableComponent from '../components/UsersTableComponent';
+import PostsTableComponent from '../components/PostsTableComponent';
 
 function Home() {
   return (
     <div>
-      <UsersTableComponent />
+      <PostsTableComponent />
 
     </div>
   );

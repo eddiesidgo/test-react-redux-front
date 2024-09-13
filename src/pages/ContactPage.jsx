@@ -1,10 +1,12 @@
 import React from 'react';
+import AddForm from '../components/AddFormComponent';
 
 function Contact() {
   return (
     <div>
       <h2>Contact Page</h2>
-      <p>Reach out to us!</p>
+      <p>Agregar: </p> <br />
+      <AddForm />
     </div>
   );
 }
