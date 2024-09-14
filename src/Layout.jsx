@@ -95,15 +95,12 @@ export default function Example() {
                     >
                       {userNavigation.map((item) => (
                         <MenuItem key={item.name}>
-                          <Link
-                            to={item.href}
-                            className={classNames(
-                          location.pathname === item.href ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium',
-                        )}
+                          <a
+                            href={item.href}
+                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
                           >
                             {item.name}
-                          </Link>
+                          </a>
                         </MenuItem>
                       ))}
                     </MenuItems>
