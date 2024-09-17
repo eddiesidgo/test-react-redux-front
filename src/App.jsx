@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Layout from './Layout';
 import Home from './pages/HomePage';
-import About from './pages/AboutPage';
 import Contact from './pages/ContactPage';
-import './App.css';
 import LoginPage from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import HooksPage from './pages/HooksPage';
+import EmployeePage from './pages/EmployeePage';
+import AboutPage from './pages/AboutPage';
+
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
           <Route index element={<PrivateRoute component={Home} />} />
           <Route path="/hooks" element={<PrivateRoute component={HooksPage} />} />
           <Route path="/contact" element={<PrivateRoute component={Contact} />} />
-          <Route path="/about" element={<PrivateRoute component={About} />} />
+          <Route path="/employee" element={<PrivateRoute component={EmployeePage} />} />
+          <Route path="/about" element={<PrivateRoute component={AboutPage} />} />
         </Route>
       </Routes>
     </Router>
