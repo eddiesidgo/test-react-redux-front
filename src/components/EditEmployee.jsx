@@ -43,7 +43,7 @@ const EditEmployee = () => {
         }
 
         try {
-            await axios.put(`http://127.0.0.1:8000/api/employees/update/${id}`, formData, {
+            await axios.put(`http://127.0.0.1:8000/api/employees/${id}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Accept': 'application/json',

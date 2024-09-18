@@ -33,6 +33,7 @@ const CreateEmployee = () => {
                 }
             });
             alert('Employee added successfully');
+            navigate('/employee'); // Redirigir de nuevo a la lista de empleados
             setFormData({
                 name: '',
                 position: '',
