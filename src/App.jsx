@@ -11,6 +11,7 @@ import EmployeePage from './pages/EmployeePage';
 import AboutPage from './pages/AboutPage';
 import CreateEmployee from './components/CreateEmployee';
 import EditEmployee from './components/EditEmployee';
+import UsersPage from './pages/UsersPage';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/create-employee" element={<PrivateRoute component={CreateEmployee} />} />
           {/* Ruta para editar un empleado */}
           <Route path="/edit-employee/:id" element={<PrivateRoute component={EditEmployee} />} />
+          {/* Ruta para mostrar todos los usuarios */}
+          <Route path="/users" element={<PrivateRoute component={UsersPage} />} />
         </Route>
       </Routes>
     </Router>

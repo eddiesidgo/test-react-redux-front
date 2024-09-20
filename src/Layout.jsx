@@ -12,8 +12,10 @@ const navigation = [
   { name: 'Dashboard', href: '/', current: true },
   { name: 'Hooks', href: '/hooks', current: false },
   { name: 'Employee', href: '/employee', current: false },
+  { name: 'Users', href: '/users', current: false },
   { name: 'Contact', href: '/contact', current: false },
   { name: 'About', href: '/about', current: false },
+  
 ];
 
 const userNavigation = [
@@ -47,8 +49,8 @@ export default function Layout() {
               <div className="flex-shrink-0">
                 <img
                   alt="Your Company"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                  className="h-8 w-8"
+                  src="https://www.dgehm.gob.sv/wp-content/uploads/2023/03/LOGO-DGEHM-BLANCO.png"
+                  className="h-10 w-38"
                 />
               </div>
               <div className="hidden md:block">

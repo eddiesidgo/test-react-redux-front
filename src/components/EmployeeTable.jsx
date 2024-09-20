@@ -30,22 +30,22 @@ const EmployeeTable = () => {
             <br /><br />
             <hr /> <br />
             <div>Employee Table</div>
-            <table className="table-auto">
+            <table className="table-auto ml-10">
                 <thead>
                     <tr>
-                        <th className="px-4 py-2">Name</th>
-                        <th className="px-4 py-2">Position</th>
-                        <th className="px-4 py-2">Department</th>
-                        <th className="px-4 py-2">Actions</th> {/* Nueva columna para acciones */}
+                        <th className="px-20 py-2">Name</th>
+                        <th className="px-20 py-2">Position</th>
+                        <th className="px-20 py-2">Department</th>
+                        <th className="px-20 py-2">Actions</th> {/* Nueva columna para acciones */}
                     </tr>
                 </thead>
                 <tbody>
                     {employees.map(employee => (
                         <tr key={employee.id}>
-                            <td className="border px-4 py-2">{employee.name}</td>
-                            <td className="border px-4 py-2">{employee.position}</td>
-                            <td className="border px-4 py-2">{employee.department}</td>
-                            <td className="border px-4 py-2">
+                            <td className="border px-20 py-2">{employee.name}</td>
+                            <td className="border px-20 py-2">{employee.position}</td>
+                            <td className="border px-20 py-2">{employee.department}</td>
+                            <td className="border px-20 py-2">
                                 {/* Botón para editar */}
                                 <Link to={`/edit-employee/${employee.id}`}>
                                     <button className="bg-indigo-600 hover:bg-indigo-800 text-white font-semibold py-1 px-4 border border-indigo-800 rounded">

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const EditEmployee = () => {
     const { id } = useParams(); // Obtener el ID del empleado desde la URL
@@ -25,7 +26,7 @@ const EditEmployee = () => {
                 setFormData(response.data);
             } catch (error) {
                 console.error('Error fetching employee data:', error);
-                alert('Error loading employee data');
+                Swal.fire({title: 'Error loading employee data'});
             }
         };
 
@@ -37,7 +38,7 @@ const EditEmployee = () => {
         
         const token = localStorage.getItem('token');
         if (!token) {
-            alert('No token found. Please log in.');
+            Swal.fire({title: 'No token found. Please log in.'});
             navigate('/login');
             return;
         }
@@ -50,16 +51,16 @@ const EditEmployee = () => {
                     'Content-Type': 'application/json'
                 }
             });
-            alert('Employee updated successfully');
+            Swal.fire({title: 'Employee updated successfully'});
             navigate('/employee'); // Redirigir de nuevo a la lista de empleados
         } catch (error) {
             if (error.response && error.response.status === 401) {
-                alert('Your session has expired or the token is invalid. Please log in again.');
+                Swal.fire({title: 'Your session has expired or the token is invalid. Please log in again.'});
                 localStorage.removeItem('token');
                 navigate('/login');
             } else {
                 console.error('Error updating employee:', error);
-                alert('An error occurred. Please try again.');
+                Swal.fire({title: 'An error occurred. Please try again.'});
             }
         }
     };

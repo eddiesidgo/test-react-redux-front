@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const CreateEmployee = () => {
     const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const CreateEmployee = () => {
         
         // Verificar si el token existe
         if (!token) {
-            alert('No token found. Please log in.');
+            Swal.fire({title: 'No token found. Please log in.'});
             navigate('/login');  // Redirigir al login si no hay token
             return;
         }
@@ -32,7 +33,7 @@ const CreateEmployee = () => {
                     'Content-Type': 'application/json'
                 }
             });
-            alert('Employee added successfully');
+            Swal.fire({title: 'Employee added successfully'});
             navigate('/employee'); // Redirigir de nuevo a la lista de empleados
             setFormData({
                 name: '',
@@ -42,12 +43,12 @@ const CreateEmployee = () => {
         } catch (error) {
             if (error.response && error.response.status === 401) {
                 // Si el servidor devuelve un error 401 (no autorizado)
-                alert('Your session has expired or the token is invalid. Please log in again.');
+                Swal.fire({title: 'Your session has expired or the token is invalid. Please log in again.'});
                 localStorage.removeItem('token'); // Limpiar el token inválido
                 navigate('/login');  // Redirigir al login
             } else {
                 console.error('Error:', error);
-                alert('An error occurred. Please try again.');
+                Swal.fire({title: 'An error occurred. Please try again.'});
             }
         }
     };
